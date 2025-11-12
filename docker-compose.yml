@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: waterwatch-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/data:/app/data
+    environment:
+      - API_PREFIX=/api
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=sqlite:///./waterwatch.db
+    env_file:
+      - .env
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - waterwatch-network
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: waterwatch-web
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8000/api
+    depends_on:
+      - api
+    networks:
+      - waterwatch-network
+
+networks:
+  waterwatch-network:
+    driver: bridge
+
+volumes:
+  model-artifacts:
