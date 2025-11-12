@@ -2,7 +2,6 @@
 
 A full-stack web application that predicts next-day air quality in New Jersey using machine learning, classifying air as **Safe** or **Unhealthy** (AQI ≥ 101).
 
-![WaterWatch Demo](docs/screenshot.png)
 
 ## 🎯 Features
 
