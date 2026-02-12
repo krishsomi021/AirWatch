@@ -23,7 +23,7 @@ A full-stack web application that predicts next-day air quality in New Jersey us
 ## 🏗️ Architecture
 
 ```
-waterwatch/
+Airwatch/
 ├── backend/              # FastAPI backend
 │   ├── app/
 │   │   ├── main.py      # FastAPI application
@@ -67,7 +67,7 @@ waterwatch/
 
 ```bash
 git clone <repository-url>
-cd waterwatch
+cd airwatch
 cp .env.example .env
 # Edit .env with your API keys
 ```
