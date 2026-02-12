@@ -1,4 +1,4 @@
-# WaterWatch - Next-Day Air Quality Classification for New Jersey
+# AirWatch - Next-Day Air Quality Classification for New Jersey
 
 A full-stack web application that predicts next-day air quality in New Jersey using machine learning, classifying air as **Safe** or **Unhealthy** (AQI ≥ 101).
 
