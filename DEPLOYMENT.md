@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This guide covers deploying WaterWatch to production environments.
+This guide covers deploying AirWatch to production environments.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ This guide covers deploying WaterWatch to production environments.
    - Click "New +" → "Web Service"
    - Connect your GitHub repository
    - Configure:
-     - **Name**: `waterwatch-api`
+     - **Name**: `airwatch-api`
      - **Branch**: `main`
      - **Root Directory**: `backend`
      - **Runtime**: `Python 3`
@@ -34,7 +34,7 @@ This guide covers deploying WaterWatch to production environments.
    API_PREFIX=/api
    LOG_LEVEL=INFO
    AIRNOW_API_KEY=your_key_here
-   NWS_USER_AGENT=WaterWatch-YourName-email@example.com
+   NWS_USER_AGENT=AirWatch-YourName-email@example.com
    PREDICTION_THRESHOLD=0.40
    ```
 
@@ -46,7 +46,7 @@ This guide covers deploying WaterWatch to production environments.
 5. **Deploy**
    - Click "Create Web Service"
    - Wait for deployment to complete
-   - Your API will be at: `https://waterwatch-api.onrender.com`
+   - Your API will be at: `https://airwatch-api.onrender.com`
 
 ### Scheduled Jobs (Optional)
 
@@ -87,7 +87,7 @@ For daily prediction updates:
 4. **Set Secrets**
    ```bash
    fly secrets set AIRNOW_API_KEY=your_key_here
-   fly secrets set NWS_USER_AGENT="WaterWatch-email@example.com"
+   fly secrets set NWS_USER_AGENT="AirWatch-email@example.com"
    ```
 
 5. **Deploy**
@@ -106,7 +106,7 @@ For daily prediction updates:
 Create/edit `backend/fly.toml`:
 
 ```toml
-app = "waterwatch-api"
+app = "airwatch-api"
 primary_region = "ewr"  # Newark (close to NJ)
 
 [build]
@@ -132,7 +132,7 @@ primary_region = "ewr"  # Newark (close to NJ)
   path = "/api/health"
 
 [mounts]
-  source = "waterwatch_data"
+  source = "airwatch_data"
   destination = "/app/data"
 ```
 
@@ -158,7 +158,7 @@ primary_region = "ewr"  # Newark (close to NJ)
 3. **Configure Environment Variables**
    In Netlify dashboard, add:
    ```
-   VITE_API_URL=https://waterwatch-api.onrender.com/api
+   VITE_API_URL=https://airwatch-api.onrender.com/api
    ```
 
 ### Vercel
@@ -177,7 +177,7 @@ primary_region = "ewr"  # Newark (close to NJ)
 3. **Environment Variables**
    ```bash
    vercel env add VITE_API_URL production
-   # Enter: https://waterwatch-api.onrender.com/api
+   # Enter: https://airwatch-api.onrender.com/api
    ```
 
 ### Manual Static Hosting
@@ -201,7 +201,7 @@ npm run build
 | Variable | Description | Example |
 |----------|-------------|---------|
 | `AIRNOW_API_KEY` | AirNow API key | `ABC123...` |
-| `NWS_USER_AGENT` | User agent for NWS API | `WaterWatch-email@example.com` |
+| `NWS_USER_AGENT` | User agent for NWS API | `AirWatch-email@example.com` |
 
 ### Optional Variables
 
@@ -210,7 +210,7 @@ npm run build
 | `API_PREFIX` | `/api` | API route prefix |
 | `LOG_LEVEL` | `INFO` | Logging level |
 | `PREDICTION_THRESHOLD` | `0.40` | Classification threshold |
-| `DATABASE_URL` | `sqlite:///./waterwatch.db` | Database connection |
+| `DATABASE_URL` | `sqlite:///./airwatch.db` | Database connection |
 | `ENABLE_SCHEDULER` | `true` | Enable daily updates |
 | `UPDATE_TIME` | `16:00` | Daily update time |
 

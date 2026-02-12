@@ -1,8 +1,8 @@
-# WaterWatch Project Summary
+# AirWatch Project Summary
 
 ## Executive Summary
 
-WaterWatch is a complete end-to-end machine learning web application that predicts next-day air quality in New Jersey, classifying air as **Safe** (AQI ≤ 100) or **Unhealthy** (AQI ≥ 101) based on PM₂.₅ measurements. The project demonstrates full-stack ML development from data collection to production deployment.
+AirWatch is a complete end-to-end machine learning web application that predicts next-day air quality in New Jersey, classifying air as **Safe** (AQI ≤ 100) or **Unhealthy** (AQI ≥ 101) based on PM₂.₅ measurements. The project demonstrates full-stack ML development from data collection to production deployment.
 
 ## Project Highlights
 
@@ -64,7 +64,7 @@ WaterWatch is a complete end-to-end machine learning web application that predic
 ## Project Structure
 
 ```
-waterwatch/
+Airwatch/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py              # FastAPI app
@@ -420,7 +420,9 @@ cd web && npm run dev
 
 ### Code Repository
 
-- **GitHub**: https://github.com/yourusername/waterwatch
+- **GitHub**: https://github.com/yourusername/Air
+
+ch
 - **Documentation**: Comprehensive README and guides
 - **License**: MIT (open source)
 

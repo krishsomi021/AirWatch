@@ -1,7 +1,7 @@
 .PHONY: help install train run-api run-web test clean docker-build docker-up docker-down
 
 help:
-	@echo "WaterWatch - Available Commands:"
+	@echo "AirWatch - Available Commands:"
 	@echo "  make install      - Install all dependencies"
 	@echo "  make train        - Train the ML model"
 	@echo "  make run-api      - Run the FastAPI backend"

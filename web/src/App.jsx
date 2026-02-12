@@ -48,7 +48,7 @@ function App() {
         <div className="header">
           <h1>
             <span>🌤️</span>
-            WaterWatch
+            AirWatch
           </h1>
           <p>Next-Day Air Quality Forecast for New Jersey</p>
         </div>

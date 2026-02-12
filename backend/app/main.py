@@ -1,4 +1,4 @@
-"""Main FastAPI application for WaterWatch AQI Prediction API."""
+"""Main FastAPI application for AirWatch AQI Prediction API."""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from backend.app.config import get_settings
@@ -17,7 +17,7 @@ settings = get_settings()
 
 # Create FastAPI app
 app = FastAPI(
-    title="WaterWatch AQI Prediction API",
+    title="AirWatch AQI Prediction API",
     description="Next-day air quality classification for New Jersey",
     version="1.0.0",
     docs_url=f"{settings.api_prefix}/docs",
@@ -42,7 +42,7 @@ app.include_router(predict.router, prefix=settings.api_prefix, tags=["prediction
 @app.on_event("startup")
 async def startup_event():
     """Initialize application on startup."""
-    logger.info("Starting WaterWatch AQI Prediction API")
+    logger.info("Starting AirWatch AQI Prediction API")
     logger.info(f"API documentation available at {settings.api_prefix}/docs")
     
     # Try to preload model
@@ -61,14 +61,14 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown."""
-    logger.info("Shutting down WaterWatch API")
+    logger.info("Shutting down AirWatch API")
 
 
 @app.get("/")
 async def root():
     """Root endpoint with API information."""
     return {
-        "name": "WaterWatch AQI Prediction API",
+        "name": "AirWatch AQI Prediction API",
         "version": "1.0.0",
         "description": "Next-day air quality classification for New Jersey",
         "docs": f"{settings.api_prefix}/docs",

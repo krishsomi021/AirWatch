@@ -13,11 +13,11 @@ class Settings(BaseSettings):
     port: int = 8000
     
     # Database
-    database_url: str = "sqlite:///./waterwatch.db"
+    database_url: str = "sqlite:///./airwatch.db"
     
     # External APIs
     airnow_api_key: str = ""
-    nws_user_agent: str = "WaterWatch-Student-email@example.com"
+    nws_user_agent: str = "AirWatch-Student-email@example.com"
     
     # Model Paths
     model_path: str = "backend/app/ml/artifacts/aqi_model.pkl"
